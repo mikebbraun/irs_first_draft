@@ -1,0 +1,62 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name, id: :company_company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, id: :company_full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :company_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :company_phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :partnership %>
+    <%= form.check_box :partnership, id: :company_partnership %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employees %>
+    <%= form.number_field :employees, id: :company_employees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contractors %>
+    <%= form.check_box :contractors, id: :company_contractors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_type %>
+    <%= form.text_field :business_type, id: :company_business_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :company_location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Company!" %>
+  </div>
+<% end %>
