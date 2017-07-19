@@ -22,14 +22,14 @@ RSpec.feature "create a company", type: :feature do
     fill_in "Email", with: "test@example.com"
     fill_in "Phone number", with: "1234567890"
     # check "Partnership", :unchecked
-    fill_in "Employees", with: 12
+    fill_in "Employees", with: 12 #should be boolean
     # check "Contractors", :checked
     fill_in "Business type", with: "Wholesale"
-    fill_in "Location", with: "Florida"
+    # fill_in "Location", with: "Florida" #location not needed.. 
 
     # click "Create Company!"
     click_button "Create Company!"
 
-    expect(page).to have_content "Welcome!"
+    expect(page).to have_content "Company was successfully created."
   end
 end
