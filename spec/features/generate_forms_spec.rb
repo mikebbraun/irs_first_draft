@@ -4,9 +4,9 @@ RSpec.feature "generate forms", type: :feature do
   # pending "add some scenarios (or delete) #{__FILE__}"
   before do
     Company.create(
-    company_name: "CN",
-    full_name: "FN",
-    email: 'test@example.com',
+    company_name: "Some Company",
+    full_name: Faker::Name.first_name,
+    email: 'some_company@example.com',
     phone_number: '(abc) 123-1234',
     partnership: false,
     employees: 56,
