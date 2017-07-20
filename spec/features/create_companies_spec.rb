@@ -4,16 +4,13 @@ RSpec.feature "create a company", type: :feature do
   # pending "add some scenarios (or delete) #{__FILE__}"
 
   before do
-    # visit home page
-    visit root_path
-
-    # click on "Create a Company Profile"
-    click_link "Create a Company Profile"
+    visit new_company_path
   end
 
   it "creates a company successfully" do
     # given they visit the homepage
-    # and they click on "Create a Company Profile"
+    # and they sign in
+    # and they click on "Create a New Company Profile"
     # when they fill in the form fully
     # then show a welcome message
 
@@ -25,7 +22,7 @@ RSpec.feature "create a company", type: :feature do
     fill_in "Employees", with: 12 #should be boolean
     # check "Contractors", :checked
     fill_in "Business type", with: "Wholesale"
-    # fill_in "Location", with: "Florida" #location not needed.. 
+    # fill_in "Location", with: "Florida" #location not needed..
 
     # click "Create Company!"
     click_button "Create Company!"

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :user_id, value:session["user_id"]%>
+  </div>
+
+  <div class="field">
     <%= form.label :company_name %>
     <%= form.text_field :company_name, id: :company_company_name %>
   </div>
